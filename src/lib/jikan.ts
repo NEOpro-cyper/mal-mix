@@ -141,7 +141,7 @@ export async function jikanFetch<T = Record<string, unknown>>(
     if (v !== undefined && v !== null && v !== '') url.searchParams.set(k, String(v));
   }
 
-  const MAX_RETRIES = 3;
+  const MAX_RETRIES = 1;
   // 429 = rate limited (Jikan's most common failure mode by far).
   const RETRY_STATUSES = new Set([429, 500, 502, 503, 504]);
   let lastErr: unknown;
